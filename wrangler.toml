@@ -1,7 +1,15 @@
-name = "imagehosting"
-main = "src/index.js"
+name = "telegraphimage"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-[env.production]
-vars = { }
+# Environment variables
+[vars]
+# TG_BOT_TOKEN and TG_CHAT_ID are set in Cloudflare dashboard
+
+# KV namespace for image storage
+[[kv_namespaces]]
+binding = "img_url"
+id = ""
+
+# This is a Pages project
+pages_build_output_dir = "/public"
